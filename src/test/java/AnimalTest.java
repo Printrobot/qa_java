@@ -24,20 +24,20 @@ import static org.junit.Assert.*;
                     {"Хищник", List.of("Животные", "Птицы", "Рыба")},
             };
         }
-
+// 1
         @Test
         public void getFood_PositiveTest() throws Exception {
             List <String> actualListOfFeed = animal.getFood(animalKindTest);
             assertEquals(listFoodTest, actualListOfFeed);
         }
-
+// 2
         @Test
         public void getFamily_PositiveTest() {
             String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
             String actual = animal.getFamily();
             assertEquals(expected, actual);
         }
-
+// 3
         @Test
         public void getFood_FailTest() {
             try {
