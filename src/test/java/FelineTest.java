@@ -8,18 +8,18 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class FelineTest {
     Feline feline = new Feline();
-    private final int testCountKittens;
+    private final int quantityKittens;
 
-    public FelineTest (int testCountKittens) {
-        this.testCountKittens = testCountKittens;
+    public FelineTest (int quantityKittens) {
+        this.quantityKittens = quantityKittens;
     }
 
     @Parameterized.Parameters
-    public static Object[][] getTestDataForCountKittens() {
+    public static Object[][] getCountKittensInput() {
         return new Object[][]{
-                {1},
-                {-1},
                 {0},
+                {1},
+                {10000},
         };
     }
 // 1
@@ -46,7 +46,7 @@ public class FelineTest {
 // 4
     @Test
     public void getKittens_PositiveParamTest() {
-        int actual = feline.getKittens(testCountKittens);
-        assertEquals(testCountKittens, actual);
+        int actual = feline.getKittens(quantityKittens);
+        assertEquals(quantityKittens, actual);
     }
 }
